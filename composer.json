@@ -1,0 +1,27 @@
+{
+  "name": "johnnymcweed/luya-module-project",
+  "description": "",
+  "type": "project",
+  "minimum-stability": "stable",
+  "keywords": ["php", "yii", "yii2", "luya", "luya-module", "module", "project"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Schmid",
+      "email": "alex.schmid@stud.unibas.ch"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/JohnnyMcWeed/luya-module-project/issues"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "johnnymcweed\\project\\" : "src/"
+    }
+  },
+  "require": {
+    "luyadev/luya-core": "~1.0.0"
+  },
+  "extra": {
+  }
+}

@@ -1,0 +1,49 @@
+<?php
+
+use yii\db\Migration;
+
+/**
+ * Class m180407_110223_project_add_notes
+ */
+class m180407_110223_project_add_notes extends Migration
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function safeUp()
+    {
+        $this->createTable('project_projectnote', [
+            'id' => $this->primaryKey(),
+            'project_id' => $this->integer(),
+            'note_id' => $this->integer(),
+
+            'is_deleted' => $this->integer(),
+        ]);
+
+        $this->createTable('project_milestonenote', [
+            'id' => $this->primaryKey(),
+            'milestone_id' => $this->integer(),
+            'note_id' => $this->integer(),
+
+            'is_deleted' => $this->integer(),
+        ]);
+
+        $this->createTable('project_tasknote', [
+            'id' => $this->primaryKey(),
+            'task_id' => $this->integer(),
+            'note_id' => $this->integer(),
+
+            'is_deleted' => $this->integer(),
+        ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function safeDown()
+    {
+        $this->dropTable('project_tasknote');
+        $this->dropTable('project_milestonenote');
+        $this->dropTable('project_projectnote');
+    }
+}
