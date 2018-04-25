@@ -94,6 +94,13 @@ class Task extends NgRestModel
         ];
     }
 
+    public function ngRestAttributeGroups()
+    {
+        return [
+            [['start', 'end'], Module::t('Time'), 'collapsed' => true]
+        ];
+    }
+
     /**
      * @inheritdoc
      */
