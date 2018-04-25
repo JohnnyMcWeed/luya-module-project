@@ -3,6 +3,7 @@
 namespace johnnymcweed\project\models;
 
 // use johnnymcweed\notes\admin\plugins\NoteArray;
+use johnnymcweed\company\models\Company;
 use johnnymcweed\project\admin\Module;
 use luya\admin\ngrest\base\NgRestModel;
 
@@ -82,7 +83,12 @@ class Project extends NgRestModel
         return [
             'title' => 'text',
             'description' => 'textarea',
-            'customer_id' => 'number',
+            'customer_id' => [
+                'selectModel',
+                'modelClass' => Company::class,
+                'valueField' => 'id',
+                'labelField' => 'title'
+            ],
             // TODO: Connect to Business / Customer Table
         ];
     }
